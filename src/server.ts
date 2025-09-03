@@ -6,7 +6,6 @@ const PORT = process.env.PORT || 5000;
 // Start the server after ensuring DB connection
 async function startServer() {
   try {
-    // Проверка подключения к базе
     await prisma.$connect();
     console.log("Database connected");
 

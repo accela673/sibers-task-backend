@@ -14,7 +14,7 @@ const options = {
     },
   },
 },
-  apis: ["./src/routes/*.ts", "./src/controllers/*.ts"], // пути к файлам с комментариями
+  apis: ["./src/routes/*.ts", "./src/controllers/*.ts"], // path to controllers and routes
 };
 
 export const swaggerSpec = swaggerJSDoc(options);
