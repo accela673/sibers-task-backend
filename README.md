@@ -16,25 +16,27 @@ npm install
 ```
 ## Create .env file in root direction
 
-PORT=5000
+#Set your own values
 
-DB_HOST=localhost
+PORT=
 
-DB_PORT=5432
+DB_HOST=
 
-DB_NAME=db_name
+DB_PORT=
 
-DB_USER=postgres
+DB_NAME=
 
-DB_PASS=postgres
+DB_USER=
 
-JWT_SECRET=supersecret
+DB_PASS=
 
+JWT_SECRET=
 
-<!-- You can change these two values to any-->
-ADMIN_USERNAME=superadmin
+#Username and password for superadmin
 
-ADMIN_PASSWORD=superpassword
+ADMIN_USERNAME=
+
+ADMIN_PASSWORD=
 
 ## Running server
 
@@ -56,4 +58,4 @@ http://localhost:5000/api/docs
 
 
 
-enjoy!
+Enjoy!
