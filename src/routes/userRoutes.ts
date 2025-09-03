@@ -1,16 +1,11 @@
 import { Router } from "express";
-import { getUsers, getUser, createUser, updateUser, deleteUser } from "../controllers/userController";
+import { getUsers, getUser, createUser, updateUser, deleteUser, toggleAdminStatus } from "../controllers/userController";
 import { authMiddleware } from "../middlewares/authMiddleWare";
 
+// Router instance
 const router = Router();
 
-/**
- * @swagger
- * tags:
- *   name: Users
- *   description: User management endpoints
- */
-
+// Get paginated users list with optional sorting
 /**
  * @swagger
  * /users:
@@ -37,6 +32,7 @@ const router = Router();
  */
 router.get("/", authMiddleware, getUsers);
 
+// Get user by ID
 /**
  * @swagger
  * /users/{id}:
@@ -60,6 +56,7 @@ router.get("/", authMiddleware, getUsers);
  */
 router.get("/:id", authMiddleware, getUser);
 
+// Create a new user
 /**
  * @swagger
  * /users:
@@ -102,6 +99,7 @@ router.get("/:id", authMiddleware, getUser);
  */
 router.post("/", authMiddleware, createUser);
 
+// Update user by ID
 /**
  * @swagger
  * /users/{id}:
@@ -147,6 +145,7 @@ router.post("/", authMiddleware, createUser);
  */
 router.put("/:id", authMiddleware, updateUser);
 
+// Delete user by ID
 /**
  * @swagger
  * /users/{id}:
@@ -169,5 +168,29 @@ router.put("/:id", authMiddleware, updateUser);
  *         description: User not found
  */
 router.delete("/:id", authMiddleware, deleteUser);
+
+// Toggle admin status of a user
+/**
+ * @swagger
+ * /users/toggle/{id}:
+ *   patch:
+ *     summary: Toggle admin status of a user
+ *     tags: [Users]
+ *     security:
+ *       - bearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: integer
+ *         description: User ID
+ *     responses:
+ *       200:
+ *         description: Successfully toggled admin status
+ *       404:
+ *         description: User not found
+ */
+router.patch("/toggle/:id", authMiddleware, toggleAdminStatus);
 
 export default router;

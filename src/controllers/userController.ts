@@ -163,7 +163,7 @@ export const deleteUser = async (req: Request, res: Response) => {
 
     await prisma.user.delete({ where: { id } });
 
-    res.json({ message: "User deleted" });
+    res.json({ message: `User ${userExists.username} deleted` });
   } catch (err: any) {
     res.status(500).json({ error: err.message });
   }

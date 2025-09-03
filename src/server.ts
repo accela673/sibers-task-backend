@@ -3,6 +3,7 @@ import { prisma } from "./config/prisma";
 
 const PORT = process.env.PORT || 5000;
 
+// Start the server after ensuring DB connection
 async function startServer() {
   try {
     // Проверка подключения к базе

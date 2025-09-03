@@ -3,6 +3,7 @@ import { login } from "../controllers/authController";
 
 const router = Router();
 
+// Login endpoint
 /**
  * @swagger
  * /auth/login:
