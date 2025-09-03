@@ -16,9 +16,11 @@ npm install
 ```
 ## Create .env file in root direction
 
-#Set your own values
+#Dont change it because frontend has to fetch from http://localhost:5000
 
-PORT=
+PORT=5000
+
+#Set your own values
 
 DB_HOST=
 
